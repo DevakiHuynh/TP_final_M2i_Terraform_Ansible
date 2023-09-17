@@ -1,6 +1,6 @@
-#Créer key_pair? To define inside the provider?
+#Mise en utilisation de key_pair
 
-# resource "aws_key_pair" "deployer" {
-#   key_name = "devaki-accesskey"
-
-# }
+resource "aws_key_pair" "deployer" {
+  key_name = "dev_accesskey"
+  public_key = file("C:\\Users\\chiri\\Desktop\\TP_M2i\\Devaki_accessKeys.csv")
+}

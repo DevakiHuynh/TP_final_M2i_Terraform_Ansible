@@ -1,4 +1,4 @@
-#Création instances 
+#Création instances workers
 #A finir, ajouter les références aux sous-réseaux et autres trucs
 
 
@@ -6,9 +6,9 @@ resource "aws_instance" "k8s_workers" {
   count         = var.counter
   ami           = "ami-091b37bfd6e01db4f"
   instance_type = "t2.micro"
-#   key_name      = "devaki-accesskey"
+#   key_name      = "dev_accesskey"
   subnet_id     = aws_subnet.k8s_subnet.id
-  associate_public_ip_address = true
+  associate_public_ip_address = true    #attribuée automatiquement
 
   private_ip = "10.0.1.2${count.index}"
 
@@ -20,7 +20,7 @@ resource "aws_instance" "k8s_workers" {
                   EOF
 
   tags = {
-    Name = "worker_${count.index + 1}"
+    Name = "dev-worker-${count.index + 1}"
   }
 
   root_block_device {
@@ -29,9 +29,7 @@ resource "aws_instance" "k8s_workers" {
   }
 
   # instance_id=$(aws ec2 run-instances \
-  #     --associate-public-ip-address \
-  #     --output text --query 'Instances[].InstanceId')
-  #   aws ec2 modify-instance-attribute --instance-id ${instance_id} --no-source-dest-check
+  #   aws ec2 modify-instance-attribute --instance-id ${instance_id} --no-source-dest-check ?????
 
 }
 
