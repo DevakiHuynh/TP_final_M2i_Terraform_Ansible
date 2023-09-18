@@ -2,3 +2,5 @@
 /Terraform/terraform.tfstate.backup
 /Terraform/.terraform
 /Terraform/.terraform.lock.hcl
+/Terraform/k8s_key.pem
+/Terraform/k8s_key.pem.pub
