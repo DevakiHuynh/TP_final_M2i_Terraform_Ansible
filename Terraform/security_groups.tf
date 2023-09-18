@@ -9,6 +9,7 @@ resource "aws_security_group" "k8s_security" {
     Name = "kubernetes"
   }
 }
+
 resource "aws_security_group_rule" "vpc_security" {
   type        = "ingress"
   description = "from VPC"
