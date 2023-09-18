@@ -1,8 +1,9 @@
 #Créer TableRoute    #créé les liens entre les différentes étapes
 
-resource "aws_network_interface" "test" {
-  subnet_id = aws_subnet.k8s_subnet.id
-}
+# resource "aws_network_interface" "test" {
+#   subnet_id = aws_subnet.k8s_subnet.id
+# }
+
 
 
 resource "aws_route_table" "main" {
@@ -18,4 +19,9 @@ resource "aws_route_table" "main" {
     gateway_id           = aws_internet_gateway.gw.id
   }
 
+}
+
+resource "aws_route_table_association" "route_table_subnet" {
+  subnet_id      = aws_subnet.k8s_subnet.id
+  route_table_id = aws_route_table.main.id
 }

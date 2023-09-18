@@ -3,7 +3,7 @@
 resource "aws_instance" "k8s_controller" {
   ami           = "ami-091b37bfd6e01db4f"
   instance_type = "t2.micro"
-#   key_name      = "dev_accesskey"
+  key_name      = aws_key_pair.deployer.key_name
   associate_public_ip_address = true    #attribuée automatiquement
   vpc_security_group_ids = [aws_security_group.k8s_security.id]
   private_ip = "10.0.1.10"

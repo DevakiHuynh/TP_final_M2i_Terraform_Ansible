@@ -6,7 +6,7 @@ resource "aws_instance" "k8s_workers" {
   count         = var.counter
   ami           = "ami-091b37bfd6e01db4f"
   instance_type = "t2.micro"
-#   key_name      = "dev_accesskey"
+  key_name      = aws_key_pair.deployer.key_name
   subnet_id     = aws_subnet.k8s_subnet.id
   associate_public_ip_address = true    #attribuée automatiquement
 

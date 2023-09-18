@@ -1,6 +1,6 @@
 #Mise en utilisation de key_pair
 
 resource "aws_key_pair" "deployer" {
-  key_name = "dev_accesskey"
-  public_key = file("C:\\Users\\chiri\\Desktop\\TP_M2i\\Devaki_accessKeys.csv")
+  key_name = "k8s_key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDaWfBxp3aPgrMs9BSBXdRCL2g/mfQOK/MVl6kiH9pNglL4bbbmFfMyZLu8mXHp83+z9R26TuKoBNFLufeZ98EBJdqNmmsU+smbtQSJQ/G6BUyua8NYRLkUtDkx0yKKXr1D6EWFVTdO6DqvGSZIPInlR8Z2o8EoTjT4Wk6Mgoe2DiYeBODK0tbXFucgeP4EuR/2Kx8dLPxAZXmD0dPUQJnhxUaYZhS0WT913yea6r6ve9FPg3oknTl7AIO9zPcoOCXJIsLypohHx3GV1LAyyco9MkqEhjlRb6meyLf2K6DIBo/lj5iF2gqfBvjN6Tn5xq3LGYrJHMeD7E1eD7aSx6gEdj0uHnhwIkEbqNGNWBAbo02FecA5x1H+3ee1QQOhQVWnU16lwjwbKdEeAF6Z4kKLZl5TrmxazDwJj++l9qRmKLFxCucNIhf20pp5Rd9P1PRr9scEegR09IZcFd1RMLozjmdHH76m9eNju1DpiHvqqMWMnCUAX9Oixmfx3koV+80= bwap@FlufflePuff"
 }
